@@ -1,11 +1,12 @@
  import React from 'react'
+ import LoginOwner from './components/LoginOwner'
+import Login from './components/Login'
  
  const App = () => {
    return (
      <>  
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    {/* <LoginOwner /> */}
+    <Login />
      </>
    )
  }
