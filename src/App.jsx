@@ -1,12 +1,12 @@
  import React from 'react'
  import LoginOwner from './components/LoginOwner'
-import Login from './components/Login'
+import LoginEmployee from './components/LoginEmployee'
  
  const App = () => {
    return (
      <>  
     {/* <LoginOwner /> */}
-    <Login />
+    <LoginEmployee />
      </>
    )
  }
