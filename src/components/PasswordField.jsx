@@ -1,7 +1,7 @@
  
 const PasswordField = () => {
   return (
-    <div className="shadow-lg">
+    <div>
       <div><h3 className="mt-8 mb-2 text-md font-light text-gray-700">Password</h3></div>
       <div>
         <label htmlFor="password" className="sr-only">

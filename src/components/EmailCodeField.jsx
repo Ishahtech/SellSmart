@@ -2,7 +2,7 @@
 const EmailCodeField = () => {
   return (
     <>
-      <div className="shadow-lg">
+      <div>
         <div>
           <h3 className="mt-8 mb-3 text-md font-light text-gray-700">Email</h3>
         </div>
