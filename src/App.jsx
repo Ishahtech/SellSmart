@@ -5,7 +5,7 @@ import LoginEmployee from './components/LoginEmployee'
  const App = () => {
    return (
      <>  
-    {/* <LoginOwner /> */}
+    <LoginOwner />
     <LoginEmployee />
      </>
    )

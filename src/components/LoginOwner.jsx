@@ -1,21 +1,19 @@
-import React from "react";
+import LoginButton from "./LoginButton";
+import PasswordField from "./PasswordField";
+import EmailCodeField from "./EmailCodeField";
 
 const LoginOwner = () => {
   return (
     <>
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
-        <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-          <h2 className="text-2xl font-bold mb-5">Log in as Owner</h2>
-          <input
-            type="text"
-            placeholder="Email or Phone Number"
-            className="w-full p-3 border rounded mb-4"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-full p-3 border rounded mb-4"
-          />
+      <div className="flex justify-center items-center min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-lg space-y-10">
+          <div>
+            <h2 className="text-center text-4xl font-bold text-blue-500 mt-6">
+              Log in as Owner
+            </h2>
+          </div>
+          <EmailCodeField />
+          <PasswordField />
           <div className="mb-4">
             <span className="block mb-2">Send OTP:</span>
             <div className="flex justify-between">
@@ -33,12 +31,8 @@ const LoginOwner = () => {
               </button>
             </div>
           </div>
-          <button className="w-full bg-blue-600 text-white py-3 rounded mb-4">
-            Login
-          </button>
-          <a href="#" className="text-blue-600">
-            Forgot Password?
-          </a>
+          <LoginButton />
+          <a href="#" className="text-blue-500 flex items-center justify-center">Forgot Password?</a>
         </div>
       </div>
     </>
