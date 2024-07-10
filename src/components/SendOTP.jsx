@@ -17,26 +17,26 @@ const SendOTP = () => {
       <div className="space-y-2">
         
         {/* First row */}
-        <div className="flex justify-between">
+        <div className="flex space-x-1">
           {firstRowButtons.map((button, index) => (
             <button
               key={index}
-              className="flex items-center flex-1 py-2 px-3 border rounded ml-1 hover:bg-blue-400 hover:text-white rounded-xl"
+              className="flex items-center py-2 px-5 border rounded ml-1 hover:bg-blue-400 hover:text-white rounded-xl"
             >
-              <FontAwesomeIcon icon={button.icon} className="w-5 h-5 mr-2" />
+              <FontAwesomeIcon icon={button.icon} className="w-4 h-4 mr-1" />
               {button.text}
             </button>
           ))}
         </div>
-
+         
         {/* Second row */}
-        <div className="flex justify-between">
+        <div className="flex space-x-1">
           {secondRowButtons.map((button, index) => (
             <button
               key={index}
-              className="flex items-center flex-1 py-2 px-3 border rounded ml-1 hover:bg-blue-400 hover:text-white rounded-xl"
+              className="flex items-center py-2 px-5 border rounded ml-1 hover:bg-blue-400 hover:text-white rounded-xl"
             >
-              <FontAwesomeIcon icon={button.icon} className="w-5 h-5 mr-2" />
+              <FontAwesomeIcon icon={button.icon} className="w-4 h-4 mr-1" />
               {button.text}
             </button>
           ))}
