@@ -23,17 +23,11 @@
     place-items: center;
   }
 
-  .login-container h1 {
-    text-align: center;
-    font-size: 40px;
-    font-style: italic;
-    margin-bottom: 1rem;    
-  } 
-   
   .login-container h2 {
     text-align: center;
     margin-bottom: 1rem;
     color: #1A72DD;
+    font-size: 35px;
   }
   
   .login-container form div {
@@ -43,6 +37,7 @@
   .login-container label {
     display: block;
     margin-bottom: 0.5rem;
+    font-size: 18px;
   }
   
   .login-container input {
@@ -50,8 +45,9 @@
     padding: 1rem;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-size: 400;
+    font-size: 1000;
     border-radius: 10px;
+    margin-bottom: 1rem;
     background: #f9f9f9;
     
   }
@@ -60,7 +56,7 @@
     width: 100%;
     margin-top: 1rem;
     padding: 1rem;
-    background-color: #80C9E4;
+    background-color: #1A72DD;
     color: white;
     border: none;
     border-radius: 10px;    
