@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+   html, body, #root {
+    font-family: 'Poppins'sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    min-width: 200px;
+    min-height: 100vh;   
+    background: #f3f4f6;
+  }
+
+.login-container {
+    width: 400px;
+    margin: auto; 
+    padding: 2rem 5rem 5rem 5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    place-items: center;
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #1A72DD;
+    font-size: 35px;
+  }
+  
+  .login-container form div {
+    margin-bottom: 1rem;
+  }
+  
+  .login-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 18px;
+  }
+  
+  .login-container input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1000;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background: #f9f9f9;
+    
+  }
+  
+  .login-container button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #1A72DD;
+    color: white;
+    border: none;
+    border-radius: 10px;    
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  .error {
+    color: red;
+  }
+  /* Media queries */
+   @media screen and (max-width: 900px) {
+    .login-container {
+      padding: 3rem;
+      font-size: 2rem;
+      width: 65vw;    }
+  
+  
+    @media screen and (max-width: 800px) {
+      .login-container {
+        padding: 1rem;
+        width: 70vw;
+        font-size: 1.1rem;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        background: none;
+      }    
+  }
+}
+  
