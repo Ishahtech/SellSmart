@@ -1,99 +1,73 @@
-import  { useState } from 'react';
+import React, { useState } from "react";
 
-
-const Login = () => {
-  const [error, setErrors] = useState([])
-  const [form, setForm] = useState({
-    email: '',
-    phoneNumber: '',
-    password: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  //validate email
-  const validate = () => {
-    const error = {}
-
-    if(!email) {
-      error.email = "Email is Required";
-    } else {
-      error.email = " "
-    }
-
-    if(!password) {
-      error.password = "Password is Required";
-   
-    } else if (password.length < 8) {
-      error.password = "Password should be at least 8 characters"
-    }
-    else {
-      error.password = " "
-    }
-    return error;
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', form);
-    
-  };
+function Signup() {
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
-    <div className="login-container">
-    {/* <h1>SellSmart</h1> */}
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <div className='inputContainer'>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder='Enter your email address'
-          />
+    <div className="flex items-center justify-center min-h-screen rounded-sm bg-gray-200">
+      <div className="w-full max-w-lg p-12 my-5 space-y-6 bg-white rounded shadow-md">
+        <h2 className="text-4xl font-bold text-center text-blue-500">Sign Up</h2>
+        <form className="space-y-6 pt-10 ">
+          <div>
+            <label htmlFor="email" className="block text-base text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              className="w-full p-2 mt-1 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder='Enter Email'
+            />
           </div>
-          <div className="error">{error.email}</div>
-        </div>
-        <div>
-          <label htmlFor="phoneNumber">Phone Number</label>
-          <div className='inputContainer'>
-          <input
-            type="tel"
-            id="phoneNumber"
-            name="phoneNumber"
-            value={form.phoneNumber}
-            onChange={handleChange}
-            placeholder='1234567890'
-          />
+          <div className="mt-10">
+            <label htmlFor="phone" className="block text-base  text-gray-700">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              className="w-full p-2 mt-1 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder='Enter Phone Number'
+            />
           </div>
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <div className='inputContainer'>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-            placeholder='At least 8 characters'
-          />
+          <div>
+            <label htmlFor="password" className="block text-base text-gray-700">
+              Password
+            </label>
+            <div className="relative">
+              <input
+                type={passwordVisible ? "text" : "password"}
+                id="password"
+                name="password"
+                required
+                className="w-full p-2 mt-1 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Enter Password"
+              />
+              <button
+                type="button"
+                onClick={() => setPasswordVisible(!passwordVisible)}
+                className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-600"
+              >
+                {passwordVisible ? "Hide" : "Show"}
+              </button>
+            </div>
           </div>
-        </div>
-        <button type="submit">Sign up</button>
-      </form>
+          <div>
+            <button
+              type="submit"
+              className="w-full p-2 mb-6 mt-3 text-white bg-blue-500 rounded-xl hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
-};
+}
 
-export default Login;
+export default Signup;
