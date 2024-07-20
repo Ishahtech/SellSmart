@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import WelcomeScreen from './components/WelcomeScreen';  // Adjust the path as necessary
 import LoginScreen from './components/LoginScreen/LoginScreen';  // Adjust the path as necessary
- import Signup from './Signups/Signup.jsx';
+ import Signup from './components/Signup.jsx';
  import LoginOwner from './components/LoginOwner'
  import LoginEmployee from './components/LoginEmployee'
  
@@ -27,5 +27,4 @@ import LoginScreen from './components/LoginScreen/LoginScreen';  // Adjust the p
  
  export default App
  
-
 
