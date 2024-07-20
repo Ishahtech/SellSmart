@@ -17,7 +17,7 @@ const KeyFeatures = () => {
         <div className="w-1/4 min-w-[320px] h-[300px] bg-white p-4 rounded-lg shadow-xl flex flex-col hover:bg-blue-500 hover:text-white transition-colors duration-300">
           <div className="flex items-center justify-center h-[300px]">
             <svg
-              class="w-24 h-24 text-blue-800 hover:text-white"
+              className ="w-24 h-24 text-blue-800 hover:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -47,7 +47,7 @@ const KeyFeatures = () => {
         <div className="w-1/4 min-w-[320px] h-[300px] bg-white p-4 rounded-lg shadow-xl flex flex-col hover:bg-blue-500 hover:text-white transition-colors duration-300">
           <div className="flex items-center justify-center h-[300px]">
             <svg
-              class="w-24 h-24 text-blue-800 hover:text-white justify-items-center"
+              className="w-24 h-24 text-blue-800 hover:text-white justify-items-center"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -78,7 +78,7 @@ const KeyFeatures = () => {
         <div className="w-1/4 min-w-[320px] h-[300px] bg-white p-4 rounded-lg shadow-xl flex flex-col hover:bg-blue-500 hover:text-white transition-colors duration-300">
           <div className="flex items-center justify-center h-[300px]">
             <svg
-              class="w-24 h-24 text-blue-800 hover:text-white"
+              className="w-24 h-24 text-blue-800 hover:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -110,7 +110,7 @@ const KeyFeatures = () => {
         <div className="w-1/4 min-w-[320px] h-[300px] bg-white p-4 rounded-lg shadow-xl flex flex-col hover:bg-blue-500 hover:text-white transition-colors duration-300">
           <div className="flex items-center justify-center h-[300px]">
             <svg
-              class="w-24 h-24 text-blue-800 hover:text-white"
+              className="w-24 h-24 text-blue-800 hover:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -138,7 +138,7 @@ const KeyFeatures = () => {
         <div className="w-1/4 min-w-[320px] h-[300px] bg-white p-4 rounded-lg shadow-xl flex flex-col hover:bg-blue-500 hover:text-white transition-colors duration-300">
           <div className="flex items-center justify-center h-[300px]">
             <svg
-              class="w-24 h-24 text-blue-800 hover:text-white"
+              className="w-24 h-24 text-blue-800 hover:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"

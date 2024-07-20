@@ -14,7 +14,8 @@ import LoginScreen from './components/LoginScreen/LoginScreen';  // Adjust the p
      <>  
      <Router>
       <Routes>
-           <Route path="/" element={<WelcomeScreen />} />
+        < Route path='/' element={<KeyFeatures />} />
+           <Route path="/welcome" element={<WelcomeScreen />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path='/Signup' element= {<Signup />} />
           <Route path='/Employee' element= {<LoginEmployee />} />
