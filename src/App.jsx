@@ -7,6 +7,7 @@ import LoginScreen from './components/LoginScreen/LoginScreen';  // Adjust the p
  import Signup from './components/Signup.jsx';
  import LoginOwner from './components/LoginOwner'
  import LoginEmployee from './components/LoginEmployee'
+ import KeyFeatures from './components/LandingPage/KeyFeatures.jsx';
  
  const App = () => {
    return (
@@ -18,6 +19,7 @@ import LoginScreen from './components/LoginScreen/LoginScreen';  // Adjust the p
           <Route path='/Signup' element= {<Signup />} />
           <Route path='/Employee' element= {<LoginEmployee />} />
           <Route path='/Owner' element= {<LoginOwner />} />
+          <Route path='Features' element= {<KeyFeatures />} />
       </Routes>
      </Router>
     
