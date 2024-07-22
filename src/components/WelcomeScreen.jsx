@@ -16,7 +16,7 @@ const WelcomeScreen = () => {
           <div className="w-8 h-1 bg-gray-500"></div>
         </div>
         <button
-          onClick={() => navigate('/login')}
+          onClick={() => navigate('/signup')}
           className="w-full md:w-3/4 lg:w-2/3 h-14 mb-4 bg-blue-500 text-white rounded-lg text-lg hover:bg-blue-600"
         >
           Create new account
