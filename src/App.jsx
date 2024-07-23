@@ -1,28 +1,31 @@
 
-
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import WelcomeScreen from './components/WelcomeScreen';  // Adjust the path as necessary
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  
 import LoginScreen from './components/LoginScreen/LoginScreen';  // Adjust the path as necessary
  import Signup from './components/Signup.jsx';
  import LoginOwner from './components/LoginOwner'
  import LoginEmployee from './components/LoginEmployee'
- import KeyFeatures from './components/LandingPage/KeyFeatures.jsx';
+ import WelcomeScreen from './components/WelcomeScreen.jsx'
+ import Wholelanding from './components/LandingPage/Wholelanding.jsx';
+
  
  const App = () => {
    return (
      <>  
      <Router>
       <Routes>
-        < Route path='/' element={<KeyFeatures />} />
+
+           
+        < Route path='/' element={<Wholelanding />} />
            <Route path="/welcome" element={<WelcomeScreen />} />
+
           <Route path="/login" element={<LoginScreen />} />
           <Route path='/Signup' element= {<Signup />} />
           <Route path='/Employee' element= {<LoginEmployee />} />
           <Route path='/Owner' element= {<LoginOwner />} />
-          <Route path='Features' element= {<KeyFeatures />} />
+          
       </Routes>
      </Router>
+     
     
      </>
    )
