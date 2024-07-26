@@ -6,7 +6,9 @@ function Signup() {
   return (
     <div className="flex items-center justify-center min-h-screen rounded-sm bg-gray-200">
       <div className="w-full max-w-lg p-12 my-5 space-y-6 bg-white rounded shadow-md">
-        <h2 className="text-4xl font-bold text-center text-blue-500">Sign Up</h2>
+        <h2 className="text-4xl font-bold text-center text-blue-500">
+          Sign Up
+        </h2>
         <form className="space-y-6 pt-10 ">
           <div>
             <label htmlFor="email" className="block text-base text-gray-700">
@@ -18,7 +20,7 @@ function Signup() {
               name="email"
               required
               className="w-full p-2 mt-1 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder='Enter Email'
+              placeholder="Enter Email"
             />
           </div>
           <div className="mt-10">
@@ -31,7 +33,7 @@ function Signup() {
               name="phone"
               required
               className="w-full p-2 mt-1 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder='Enter Phone Number'
+              placeholder="Enter Phone Number"
             />
           </div>
           <div>
