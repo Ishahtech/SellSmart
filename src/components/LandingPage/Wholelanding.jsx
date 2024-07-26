@@ -7,7 +7,7 @@ function Wholelanding() {
     <>
     <Header />
     <KeyFeatures />
-   
+    <AboutUs />   
     </>
   )
 }
