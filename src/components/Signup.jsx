@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import LoginScreen from "./LoginScreen/LoginScreen";
 
 function Signup() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -67,7 +69,13 @@ function Signup() {
             </button>
           </div>
         </form>
+        <div className="flex justify-center items-center">
+        <p className="block text-base text-gray-700">You have an account?</p>
+        <button className="text-blue-500 text-base font-medium ml-2 hover:text-blue-800"><Link to="/login">Log in</Link></button>
       </div>
+      </div>
+
+      
     </div>
   );
 }

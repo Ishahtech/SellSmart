@@ -19,26 +19,26 @@ function AboutUs() {
         </div>
         <div className="w-full md:w-1/2 md:pl-12">
           <div className="flex flex-col items-center justify-center">
-            <p className="mb-2 py-3 px-4 text-blue-700 font-bold bg-blue-200 rounded-full">1</p>
+            <p className="mb-2 py-3 px-4 text-blue-800 font-bold bg-blue-200 rounded-full">1</p>
             <h3 className="text-xl font-bold">Signup</h3>
-            <p className="mb-4 justify-center items-center text-gray-700 opacity-90">
+            <p className="mb-4 justify-center items-center text-gray-800 opacity-90">
               Provide essential details like <br />
               your name,email address <br /> and a secure password.
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center mt-8">
-            <p className="mb-2 py-3 px-4 text-blue-700 font-bold bg-blue-200 rounded-full ">2</p>
+            <p className="mb-2 py-3 px-4 text-blue-800 font-bold bg-blue-200 rounded-full ">2</p>
             <h3 className="font-bold text-lg">Add New Products/Sales</h3>
-            <p className="mb-4 justify-center items-center text-gray-700 opacity-90">
+            <p className="mb-4 justify-center items-center text-gray-800 opacity-90">
               Manage your Products and Sales by <br /> entering essential details <br /> about your products and sales
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center mt-8">
-            <p className="mb-2 py-3 px-4 text-blue-700 font-bold bg-blue-200 rounded-full marker:selection:">3</p>
+            <p className="mb-2 py-3 px-4 text-blue-800 font-bold bg-blue-200 rounded-full marker:selection:">3</p>
             <h3 className="text-lg font-bold">Submit</h3>
-            <p className="mb-4 justify-center items-center text-gray-700 opacity-90">
+            <p className="mb-4 justify-center items-center text-gray-800 opacity-90">
               Submit the entered to <br /> log your products and sales into <br /> the systems
             </p>
           </div>
