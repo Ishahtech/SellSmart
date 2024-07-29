@@ -1,8 +1,11 @@
 import posImage from '../../images/posImage.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className="Landing w-screen h-screen bg-cover" style={{ backgroundImage: `url(${posImage})` }}>
       <header className="header flex justify-between items-center py-5 px-10 bg-white relative z-30">
@@ -14,8 +17,8 @@ const Header = () => {
           <a href="#help" className="mx-4 text-black font-medium">Help</a>
         </nav>
         <div className="auth-buttons flex">
-          <button className="login ml-4 px-10 py-2 border-2 border-blue-800 text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white">Login</button>
-          <button className="signup ml-4 px-10 py-2 border-2 border-blue-800 text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white">Signup</button>
+          <button onClick={() => navigate('/login')} className="login ml-4 px-10 py-2 border-2 border-blue-800 text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white">Login</button>
+          <button onClick={() => navigate('/Signup')} className="signup ml-4 px-10 py-2 border-2 border-blue-800 text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white">Signup</button>
         </div>
       </header>
       <main className="main flex items-center justify-center h-[calc(100vh-80px)] relative text-white">

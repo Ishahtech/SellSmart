@@ -1,23 +1,39 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import LoginScreen from "./LoginScreen/LoginScreen";
+import { auth } from '../firebase-config';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
 
 function Signup() {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try{
+      await createUserWithEmailAndPassword(auth,email,password)
+      alert('User created successfully!');
+    } catch (err) {
+      setError(err.message);
+    }
+  }
   return (
     <div className="flex items-center justify-center min-h-screen rounded-sm bg-gray-200">
       <div className="w-full max-w-lg p-12 my-5 space-y-6 bg-white rounded shadow-md">
         <h2 className="text-4xl font-bold text-center text-blue-500">
           Sign Up
         </h2>
-        <form className="space-y-6 pt-10 ">
+        <form onSubmit={handleSignup} className="space-y-6 pt-10 ">
           <div>
             <label htmlFor="email" className="block text-base text-gray-700">
               Email
             </label>
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               id="email"
               name="email"
               required
@@ -46,11 +62,14 @@ function Signup() {
               <input
                 type={passwordVisible ? "text" : "password"}
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 name="password"
                 required
                 className="w-full p-2 mt-1 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Enter Password"
               />
+              {error && <p style={{ color: 'red' }}>{error}</p>}
               <button
                 type="button"
                 onClick={() => setPasswordVisible(!passwordVisible)}
