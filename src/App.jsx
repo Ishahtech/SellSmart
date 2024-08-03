@@ -5,7 +5,7 @@ import LoginOwner from "./components/LoginOwner";
 import LoginEmployee from "./components/LoginEmployee";
 import WelcomeScreen from "./components/WelcomeScreen.jsx";
 import Wholelanding from "./components/LandingPage/Wholelanding.jsx";
-
+import Manager from "./components/ManagerDashboard/Manager.jsx";
 const App = () => {
   return (
     <>
@@ -17,6 +17,7 @@ const App = () => {
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Employee" element={<LoginEmployee />} />
           <Route path="/Owner" element={<LoginOwner />} />
+          <Route path="/Manager" element={<Manager />} />
         </Routes>
       </Router>
     </>
