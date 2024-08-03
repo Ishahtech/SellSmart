@@ -5,6 +5,10 @@ const InventoryContent = () => {
     { id: 1, name: "Coffee Beans", quantity: 50, category: "Beverages" },
     { id: 2, name: "Milk", quantity: 30, category: "Dairy" },
     { id: 3, name: "Sugar", quantity: 20, category: "Condiments" },
+    { id: 4, name: "Tissue paper", quantity: 6, category: "Toiletries" },
+    { id: 5, name: "Corn flakes", quantity: 60, category: "Cereals" },
+    { id: 6, name: "Salt", quantity: 10, category: "Condiments" },
+    { id: 7, name: "French cookies", quantity: 0, category: "Snacks" },
     // Add more inventory data as needed
   ];
 
@@ -12,7 +16,7 @@ const InventoryContent = () => {
     <div className="p-4 bg-white shadow-md rounded mt-4">
       <h3 className="text-xl font-bold mb-4">Inventory Overview</h3>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="p-4 bg-green-200 rounded">
+        <div className="p-4 bg-green-300 rounded">
           <h4 className="text-lg font-bold">Total Products</h4>
           <p className="text-2xl">{inventoryData.length}</p>
         </div>
