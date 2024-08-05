@@ -17,7 +17,9 @@ function AdminLayout() {
         {/* Content Area */}
         <div className="flex-1 p-4 overflow-auto">
           <Content />
+          {/* <div>{<Outlet />}</div> */}
         </div>
+        
       </div>
     </div>
   );
