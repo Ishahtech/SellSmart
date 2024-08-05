@@ -6,6 +6,7 @@ import LoginEmployee from "./components/LoginEmployee";
 import WelcomeScreen from "./components/WelcomeScreen.jsx";
 import Wholelanding from "./components/LandingPage/Wholelanding.jsx";
 import Manager from "./components/ManagerDashboard/Manager.jsx";
+import Admin from "./components/AdminDashboard/Admin.jsx";
 const App = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/Employee" element={<LoginEmployee />} />
           <Route path="/Owner" element={<LoginOwner />} />
           <Route path="/Manager" element={<Manager />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Router>
     </>
