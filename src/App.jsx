@@ -6,6 +6,7 @@ import LoginScreen from './components/LoginScreen/LoginScreen';  // Adjust the p
  import LoginEmployee from './components/LoginEmployee'
  import WelcomeScreen from './components/WelcomeScreen.jsx'
  import Wholelanding from './components/LandingPage/Wholelanding.jsx';
+ import Dashboard from "./components/CashierDashboard/Dashboard.jsx";
 
  
  const App = () => {
@@ -13,15 +14,13 @@ import LoginScreen from './components/LoginScreen/LoginScreen';  // Adjust the p
      <>  
      <Router>
       <Routes>
-
-           
-        < Route path='/' element={<Wholelanding />} />
+      < Route path='/' element={<Wholelanding />} />
            <Route path="/welcome" element={<WelcomeScreen />} />
-
           <Route path="/login" element={<LoginScreen />} />
           <Route path='/Signup' element= {<Signup />} />
           <Route path='/Employee' element= {<LoginEmployee />} />
           <Route path='/Owner' element= {<LoginOwner />} />
+          <Route path="/" element={<Dashboard />} />
           
       </Routes>
      </Router>
@@ -34,3 +33,4 @@ import LoginScreen from './components/LoginScreen/LoginScreen';  // Adjust the p
  export default App
  
 
+          
