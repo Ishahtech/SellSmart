@@ -72,7 +72,7 @@ const ReportsContent = () => {
     <div className="p-4 bg-white shadow-md rounded mt-4">
       <h3 className="text-xl font-bold mb-4">Reports Overview</h3>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="p-4 bg-green-300 rounded">
+        <div className="p-4 bg-blue-400 rounded">
           <h4 className="text-lg font-bold">Total Reports</h4>
           <p className="text-2xl">{reportData.length}</p>
         </div>

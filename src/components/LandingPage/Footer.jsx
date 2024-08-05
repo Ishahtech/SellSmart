@@ -132,7 +132,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 text-center">
-          <p>&copy; 2024 Your Company. All rights reserved.</p>
+          <p>&copy; 2024 SellSmart. All rights reserved.</p>
         </div>
       </div>
     </footer>
