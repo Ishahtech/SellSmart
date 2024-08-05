@@ -1,8 +1,8 @@
 import React from "react";
-// import { IoMdMenu } from "react-icons/io";
 import { CgMenuRound } from "react-icons/cg";
-import { FaUsers, FaSitemap, FaShoppingBasket } from "react-icons/fa";
-import { TbReportSearch } from "react-icons/tb";
+import { FaUsers, FaSitemap } from "react-icons/fa";
+import { BsCart3, BsListCheck,  BsMenuButtonWideFill, BsFillGearFill, BsPeopleFill } from "react-icons/bs";
+
 
 const Sidebar = ({ isActive, toggleSidebar }) => {
   return (
@@ -25,8 +25,8 @@ const Sidebar = ({ isActive, toggleSidebar }) => {
                 Users
               </a>
             </li>
-            <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
-              <FaUsers />
+            <li className="flex items-center px-4 py-2 text-bold text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+              <BsListCheck  />
               <a href="#" className="ml-2">
                 Inventory
               </a>
@@ -37,15 +37,21 @@ const Sidebar = ({ isActive, toggleSidebar }) => {
               </a>
             </li>
             <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
-            <FaShoppingBasket /><a href="#" className="ml-2">
-                Orders
+            <BsPeopleFill  /><a href="#" className="ml-2">
+                 Customers
               </a>
             </li>
             <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
-            <TbReportSearch /><a href="#" className="ml-2">
+            <BsMenuButtonWideFill /><a href="#" className="ml-2">
                  Reports
               </a>
             </li>
+            <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <BsFillGearFill  /><a href="#" className="ml-2">
+                 Settings
+              </a>
+            </li>
+
           </ul>
           {/* <button className='absolute top-4 right-4 lg:hidden'>
             <IoMdMenu className='w-7 h-7 text-blue-900'/>
