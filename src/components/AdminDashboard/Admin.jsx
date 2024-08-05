@@ -1,13 +1,12 @@
-import AdminLayout from './AdminLayout'
-import Sidebar from './sidebar'
-import Navbar from './Navbar'
+import AdminLayout from "./AdminLayout";
 
 function Admin() {
   return (
     <>
-    <AdminLayout />  
+      <AdminLayout />
+     
     </>
-  )
+  );
 }
 
-export default Admin
+export default Admin;

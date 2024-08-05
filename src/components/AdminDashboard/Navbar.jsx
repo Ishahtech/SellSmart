@@ -2,6 +2,7 @@ import React from 'react';
 import { FaRegBell, FaSearch  } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 
+
 const Navbar = () => {
   return (
     <nav className="bg-white shadow-md py-4 px-6 flex justify-between items-center">

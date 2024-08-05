@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import Sidebar from "./sidebar";
+import Content from "./Content";
 import { Outlet } from "react-router-dom";
 
 function AdminLayout() {
@@ -15,7 +16,7 @@ function AdminLayout() {
 
         {/* Content Area */}
         <div className="flex-1 p-4 overflow-auto">
-          <Outlet />
+          <Content />
         </div>
       </div>
     </div>
