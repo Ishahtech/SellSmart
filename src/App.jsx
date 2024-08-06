@@ -7,19 +7,28 @@ import WelcomeScreen from "./components/WelcomeScreen.jsx";
 import Wholelanding from "./components/LandingPage/Wholelanding.jsx";
 import Manager from "./components/ManagerDashboard/Manager.jsx";
 import Admin from "./components/AdminDashboard/Admin.jsx";
+import Layout from "./components/Layout.jsx";
+
 const App = () => {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Wholelanding />} />
+         {/* Routes without the Sidebar */}
+         <Route path="/" element={<Wholelanding />} />
           <Route path="/welcome" element={<WelcomeScreen />} />
           <Route path="/login" element={<LoginScreen />} />
-          <Route path="/Signup" element={<Signup />} />
-          <Route path="/Employee" element={<LoginEmployee />} />
-          <Route path="/Owner" element={<LoginOwner />} />
-          <Route path="/Manager" element={<Manager />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/employee" element={<LoginEmployee />} />
+          <Route path="/owner" element={<LoginOwner />} />
+
+          {/* Routes with the Sidebar */}
+          <Route path="/manager" element={<Layout />}>
+            <Route index element={<Manager />} />
+          </Route>
+          <Route path="/admin" element={<Layout />}>
+            <Route index element={<Admin />} />
+          </Route>
         </Routes>
       </Router>
     </>
