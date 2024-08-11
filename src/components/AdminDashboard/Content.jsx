@@ -63,17 +63,17 @@ function Content() {
       <div className="p-4 w-full">
         <h2 className="text-2xl font-bold mb-4">Dashboard Overview</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <div className="p-8 text-center rounded-md shadow-xl">
-            <h3 className="text-xl font-semibold">Total Users</h3>
+          <div className="bg-white p-8 text-center rounded-md shadow-xl">
+            <h3 className="text-xl font-semibold">Users Today</h3>
             <p className="text-2xl text-blue-600">1500</p>
           </div>
-          <div className="bg-white p-4 text-center rounded-md shadow-xl">
+          <div className="bg-white p-8 text-center rounded-md shadow-xl">
             <h3 className="text-xl text-center font-semibold">
               Total Products
             </h3>
             <p className="text-2xl text-blue-600">3200</p>
           </div>
-          <div className="bg-white p-4 rounded-md shadow-xl text-center">
+          <div className="bg-white p-8 rounded-md shadow-xl text-center">
             <h3 className="text-xl font-semibold">Total Customers</h3>
             <p className="text-2xl text-blue-600">870</p>
           </div>
@@ -84,7 +84,7 @@ function Content() {
         </div>
 
         <div className="charts grid grid-cols-1 md:grid-cols-2 gap-5 mt-20 md:mt-8 h-[300px]">
-          <div className="justify-center text-center h-96 mt-8">
+          <div className=" bg-white justify-center text-center h-96 mt-8 box-border shadow-lg ">
             <h2 className="text-blue-500 text-2xl font-bold mb-6">
               {" "}
               Top 5 Products
@@ -112,7 +112,7 @@ function Content() {
             </ResponsiveContainer>
           </div>
 
-          <div className="justify-center text-center h-96 mt-8">
+          <div className="justify-center text-center h-96 mt-8 bg-white">
             <h2 className="text-blue-500 text-2xl font-bold mb-6">
               {" "}
               Purchase and Sales Order
