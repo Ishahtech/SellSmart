@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import Sidebar from "./sidebar";
 import Content from "./Content";
 import Inventory from "./Inventory";
 import Users from "./Users";
@@ -37,7 +36,7 @@ function AdminLayout() {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <Sidebar className="w-64 h-full bg-gray-800 text-white" setActivePage={setActivePage} />
+      
 
       {/* Main Content Area */}
       <div className="flex flex-col flex-1 bg-gray-200">

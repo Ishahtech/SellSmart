@@ -8,6 +8,8 @@ import Wholelanding from "./components/LandingPage/Wholelanding.jsx";
 import Manager from "./components/ManagerDashboard/Manager.jsx";
 import Admin from "./components/AdminDashboard/Admin.jsx";
 import Layout from "./components/Layout.jsx";
+import InventoryContent from "./components/ManagerDashboard/InventoryContent.jsx";
+
 
 const App = () => {
   return (
@@ -26,9 +28,15 @@ const App = () => {
           <Route path="/manager" element={<Layout />}>
             <Route index element={<Manager />} />
           </Route>
+
           <Route path="/admin" element={<Layout />}>
             <Route index element={<Admin />} />
           </Route>
+
+          <Route path="/inventory" element={<Layout />}>
+            <Route index element={<InventoryContent />} />
+          </Route>
+
         </Routes>
       </Router>
     </>

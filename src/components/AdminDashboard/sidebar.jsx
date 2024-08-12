@@ -14,7 +14,7 @@ const Sidebar = () => {
         <ul className="space-y-2">
           <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
             <CgMenuRound />
-            <Link to="/manager" className="ml-2">
+            <Link to="/admin" className="ml-2">
               Dashboard
             </Link>
           </li>
@@ -27,7 +27,7 @@ const Sidebar = () => {
 
           <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
             <FaUsers />
-            <Link to="/admin" className="ml-2">
+            <Link to="/manager" className="ml-2">
               Manager
             </Link>
           </li>
@@ -73,6 +73,14 @@ const Sidebar = () => {
             Settings
             </Link>
           </li>
+
+          <li className="flex items-center px-4 py-8 text-bold text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <BsCart3  />
+            <Link to="/login" className="ml-2">
+            Log Out
+            </Link>
+          </li>
+
 
 
 
