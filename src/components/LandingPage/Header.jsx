@@ -17,7 +17,7 @@ const Header = () => {
           <a href="#help" className="mx-4 text-black font-medium">Help</a>
         </nav>
         <div className="auth-buttons flex">
-          <button onClick={() => navigate('/login')} className="login ml-4 px-10 py-2 border-2 border-blue-800 text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white">Login</button>
+          <button onClick={() => navigate('/admin')} className="login ml-4 px-10 py-2 border-2 border-blue-800 text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white">Login</button>
           <button onClick={() => navigate('/Signup')} className="signup ml-4 px-10 py-2 border-2 border-blue-800 text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white">Signup</button>
         </div>
       </header>

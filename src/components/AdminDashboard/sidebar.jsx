@@ -1,65 +1,82 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CgMenuRound } from "react-icons/cg";
 import { FaUsers, FaSitemap } from "react-icons/fa";
-import { BsListCheck, BsMenuButtonWideFill, BsFillGearFill, BsPeopleFill } from "react-icons/bs";
+import { BsCart3, BsListCheck, BsMenuButtonWideFill, BsFillGearFill, BsPeopleFill } from "react-icons/bs";
 
-const Sidebar = ({ isSidebarOpen, toggleSidebar, setActivePage }) => {
+const Sidebar = () => {
   return (
-    <aside
-      className={`h-screen bg-gray-800 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform ${
-        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-      } md:relative md:translate-x-0 transition duration-200 ease-in-out`}
-    >
-      <div className="text-white flex items-center justify-between px-4">
+    <aside className="h-screen bg-gray-800 text-white w-64 space-y-6 py-7 px-2">
+      <div className="text-white flex items-center space-x-2 px-4">
         <span className="text-2xl font-extrabold">SellSmart</span>
-        <button className="md:hidden" onClick={toggleSidebar}>
-          <CgMenuRound className="text-3xl" />
-        </button>
       </div>
       <nav>
         <ul className="space-y-2">
-          <li onClick={() => setActivePage("Content")}>
-            <div className="flex items-center px-4 py-2 rounded-md cursor-pointer text-gray-400 hover:bg-gray-700 hover:text-white">
-              <CgMenuRound />
-              <span className="ml-2">Dashboard</span>
-            </div>
+          <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <CgMenuRound />
+            <Link to="/manager" className="ml-2">
+              Dashboard
+            </Link>
           </li>
-          <li onClick={() => setActivePage("Users")}>
-            <div className="flex items-center px-4 py-2 rounded-md cursor-pointer text-gray-400 hover:bg-gray-700 hover:text-white">
-              <FaUsers />
-              <span className="ml-2">Users</span>
-            </div>
+          <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <FaUsers />
+            <Link to="/admin" className="ml-2">
+              Admin
+            </Link>
           </li>
-          <li onClick={() => setActivePage("Inventory")}>
-            <div className="flex items-center px-4 py-2 rounded-md cursor-pointer text-gray-400 hover:bg-gray-700 hover:text-white">
-              <BsListCheck />
-              <span className="ml-2">Inventory</span>
-            </div>
+
+          <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <FaUsers />
+            <Link to="/admin" className="ml-2">
+              Manager
+            </Link>
           </li>
-          <li onClick={() => setActivePage("Products")}>
-            <div className="flex items-center px-4 py-2 rounded-md cursor-pointer text-gray-400 hover:bg-gray-700 hover:text-white">
-              <FaSitemap />
-              <span className="ml-2">Products</span>
-            </div>
+
+          <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <FaUsers />
+            <Link to="/admin" className="ml-2">
+              Cashier
+            </Link>
           </li>
-          <li onClick={() => setActivePage("Customers")}>
-            <div className="flex items-center px-4 py-2 rounded-md cursor-pointer text-gray-400 hover:bg-gray-700 hover:text-white">
-              <BsPeopleFill />
-              <span className="ml-2">Customers</span>
-            </div>
+
+          <li className="flex items-center px-4 py-2 text-bold text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <BsListCheck  />
+            <Link to="/inventory" className="ml-2">
+              Inventory
+            </Link>
+            </li>
+
+          <li className="flex items-center px-4 py-2 text-bold text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <FaSitemap  />
+            <Link to="/inventory" className="ml-2">
+              Products
+            </Link>
           </li>
-          <li onClick={() => setActivePage("Reports")}>
-            <div className="flex items-center px-4 py-2 rounded-md cursor-pointer text-gray-400 hover:bg-gray-700 hover:text-white">
-              <BsMenuButtonWideFill />
-              <span className="ml-2">Reports</span>
-            </div>
+
+          <li className="flex items-center px-4 py-2 text-bold text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <BsPeopleFill  />
+            <Link to="/inventory" className="ml-2">
+            Customers
+            </Link>
           </li>
-          <li onClick={() => setActivePage("Settings")}>
-            <div className="flex items-center px-4 py-2 rounded-md cursor-pointer text-gray-400 hover:bg-gray-700 hover:text-white">
-              <BsFillGearFill />
-              <span className="ml-2">Settings</span>
-            </div>
+
+          <li className="flex items-center px-4 py-2 text-bold text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <BsMenuButtonWideFill  />
+            <Link to="/inventory" className="ml-2">
+            Reports
+            </Link>
           </li>
+          
+          <li className="flex items-center px-4 py-2 text-bold text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+            <BsFillGearFill  />
+            <Link to="/inventory" className="ml-2">
+            Settings
+            </Link>
+          </li>
+
+
+
+          {/* Add more links as necessary */}
         </ul>
       </nav>
     </aside>

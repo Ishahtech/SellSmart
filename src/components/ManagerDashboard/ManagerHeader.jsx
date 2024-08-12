@@ -20,11 +20,11 @@ const ManagerHeader = ({ toggleSidebar }) => {
             />
           </svg>
         </button>
-        <h1 className="text-xl font-bold flex-1 text-center lg:text-left lg:flex-none">
+        <h1 className="text-xl text-blue-800 font-bold flex-1 text-center lg:text-left lg:flex-none">
           Manager's Dashboard
         </h1>
         <div>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded">
+          <button className="px-4 py-2 border-2 border-blue-800  text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white">
             Log Out
           </button>
         </div>
