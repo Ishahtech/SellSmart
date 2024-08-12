@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar";
 import Content from "./Content";
 import Inventory from "./Inventory";
 import Users from "./Users";
