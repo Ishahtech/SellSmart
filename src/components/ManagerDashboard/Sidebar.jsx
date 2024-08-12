@@ -4,25 +4,25 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <>
       <div
-        className={`fixed inset-y-0 left-0 w-64 bg-gray-800 text-white transform ${
+        className={`fixed inset-y-0 left-0 w-64 bg-black text-white transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform lg:static lg:translate-x-0`}
       >
         <div className="p-4 text-lg font-bold">SellSmart</div>
         <ul>
-          <li className="p-4 hover:bg-gray-700">
+          <li className="p-4 hover:bg-blue-800">
             <a href="#">Overview</a>
           </li>
-          <li className="p-4 hover:bg-gray-700">
+          <li className="p-4 hover:bg-blue-800">
             <a href="#">Sales</a>
           </li>
-          <li className="p-4 hover:bg-gray-700">
+          <li className="p-4 hover:bg-blue-800">
             <a href="#">Inventory</a>
           </li>
-          <li className="p-4 hover:bg-gray-700">
+          <li className="p-4 hover:bg-blue-800">
             <a href="#">Reports</a>
           </li>
-          <li className="p-4 hover:bg-gray-700">
+          <li className="p-4 hover:bg-blue-800">
             <a href="#">Cashiers</a>
           </li>
         </ul>
