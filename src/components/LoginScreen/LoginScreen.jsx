@@ -12,7 +12,7 @@ const LoginScreen = () => {
     <div className="flex flex-col items-center justify-center h-screen w-screen text-center bg-gray-100">
       <div className="w-4/5 h-[95%] ml-20 bg-white p-8">
         <div className="flex items-center relative top-8 left-32">
-          <FontAwesomeIcon icon={faLessThan} className="h-8 w-8 bg-blue-500 text-white relative right-8 bottom-8 curspr-pointer"  onClick={()=>navigate('/WelcomeScreen.jsx')}/>
+          <FontAwesomeIcon icon={faLessThan} className="h-8 w-8 bg-blue-500 text-white relative right-8 bottom-8 cursor-pointer"  onClick={()=>navigate('/')}/>
           <h2 className="text-2xl text-blue-500 relative left-80 bottom-10">Log in</h2>
         </div>
         <h3 className="text-xl relative">Welcome to SellSmart!</h3>
