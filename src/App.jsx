@@ -21,14 +21,16 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/employee" element={<LoginEmployee />} />
           <Route path="/owner" element={<LoginOwner />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/manager" element={<Manager />} />
 
           {/* Routes with the Sidebar */}
-          <Route path="/manager" element={<Layout />}>
+          {/* <Route path="/manager" element={<Layout />}>
             <Route index element={<Manager />} />
           </Route>
           <Route path="/admin" element={<Layout />}>
             <Route index element={<Admin />} />
-          </Route>
+          </Route> */}
         </Routes>
       </Router>
     </>
