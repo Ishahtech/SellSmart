@@ -11,6 +11,7 @@ import Layout from "./components/Layout.jsx";
 import InventoryContent from "./components/ManagerDashboard/InventoryContent.jsx";
 
 
+
 const App = () => {
   return (
     <>
@@ -44,3 +45,4 @@ const App = () => {
 };
 
 export default App;
+
