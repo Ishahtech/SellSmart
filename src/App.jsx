@@ -9,6 +9,7 @@ import Manager from "./components/ManagerDashboard/Manager.jsx";
 import Admin from "./components/AdminDashboard/Admin.jsx";
 import Layout from "./components/Layout.jsx";
 import InventoryContent from "./components/ManagerDashboard/InventoryContent.jsx";
+import Dashboard from "./components/CashierDashboard/Dashboard.jsx";
 
 
 
@@ -36,6 +37,10 @@ const App = () => {
 
           <Route path="/inventory" element={<Layout />}>
             <Route index element={<InventoryContent />} />
+          </Route>
+
+          <Route path="/cashier" element={<Layout />}>
+            <Route index element={<Dashboard />} />
           </Route>
 
         </Routes>

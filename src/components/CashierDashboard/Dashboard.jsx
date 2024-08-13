@@ -4,7 +4,7 @@ import SearchInput from './SearchInput';
 import Category from './Category';
 import Item from './Item';
 import CheckoutItem from './CheckoutItem';
-import Sidebar from './Sidebar';
+
 
 const Dashboard = () => {
   const [items, setItems] = useState([]);
@@ -77,7 +77,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex h-screen">
-      <Sidebar />
+  
       <div className={`flex-1 p-4 ${isCheckoutVisible ? 'w-2/3' : 'w-full'}`}>
         <Heading text="Item menu" />
         <SearchInput onSearch={setSearchQuery} />

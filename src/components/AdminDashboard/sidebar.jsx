@@ -34,7 +34,7 @@ const Sidebar = () => {
 
           <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
             <FaUsers />
-            <Link to="/admin" className="ml-2">
+            <Link to="/cashier" className="ml-2">
               Cashier
             </Link>
           </li>
