@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase-config"; // Ensure this path is correct
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase-config"; // Adjust the path based on your file structure
 
 const InventoryContent = () => {
-  const [inventoryData, , setInventoryData] = useState([]);
+  const [inventoryData, setInventoryData] = useState([]);
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -34,17 +32,17 @@ const InventoryContent = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="p-4 bg-blue-400 rounded">
           <h4 className="text-lg font-bold">Total Products</h4>
-          <p className="text-2xl">{inventoryData.length}</p>
+          <p className="text-md">{inventoryData.length}</p>
         </div>
         <div className="p-4 bg-yellow-200 rounded">
           <h4 className="text-lg font-bold">Low Stock</h4>
-          <p className="text-2xl">
+          <p className="text-md">
             {inventoryData.filter((item) => item.quantity < 10).length}
           </p>
         </div>
         <div className="p-4 bg-red-500 rounded">
           <h4 className="text-lg font-bold">Out of Stock</h4>
-          <p className="text-2xl">
+          <p className="text-md">
             {inventoryData.filter((item) => item.quantity === 0).length}
           </p>
         </div>

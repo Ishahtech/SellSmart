@@ -14,15 +14,15 @@ const SalesContent = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="p-4 bg-black text-white rounded">
           <h4 className="text-lg font-bold">Total Sales</h4>
-          <p className="text-2xl">$650</p>
+          <p className="text-md">$650</p>
         </div>
         <div className="p-4 bg-purple-200 rounded">
           <h4 className="text-lg font-bold">Total Transactions</h4>
-          <p className="text-2xl">3</p>
+          <p className="text-md">3</p>
         </div>
         <div className="p-4 bg-blue-400 rounded">
           <h4 className="text-lg font-bold">Average Sale</h4>
-          <p className="text-2xl">$217</p>
+          <p className="text-md">$217</p>
         </div>
       </div>
       <h3 className="text-xl font-bold my-4">Recent Transactions</h3>

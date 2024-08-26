@@ -5,7 +5,7 @@ import ReportsContent from "./ReportsContent";
 import CashierContent from "./CashierContent";
 
 const DashboardContent = () => {
-  const [activeTab, setActiveTab] = useState("Overview");
+  const [activeTab, setActiveTab] = useState("Sales");
 
   const renderContent = () => {
     switch (activeTab) {
