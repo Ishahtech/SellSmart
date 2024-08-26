@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { collection, doc, updateDoc, getDocs, addDoc } from "firebase/firestore";
+import { db } from "../../firebase-config"; // Ensure this path is correct
 import Heading from './Heading';
 import SearchInput from './SearchInput';
 import Category from './Category';
 import Item from './Item';
 import CheckoutItem from './CheckoutItem';
 
-
 const Dashboard = () => {
-  const [items, setItems] = useState([]);
+  const [apiItems, setApiItems] = useState([]);
+  const [firebaseItems, setFirebaseItems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checkoutItems, setCheckoutItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -15,11 +17,7 @@ const Dashboard = () => {
   const [isCheckoutVisible, setIsCheckoutVisible] = useState(false);
 
   useEffect(() => {
-    // Fetch categories and items from the Fakestore API
-    fetch('https://fakestoreapi.com/products/categories')
-      .then((response) => response.json())
-      .then((data) => setCategories(['All', ...data]));
-
+    // Fetch items from the Fakestore API
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
       .then((data) => {
@@ -28,24 +26,47 @@ const Dashboard = () => {
           name: product.title,
           price: product.price,
           category: product.category,
-          image: product.image
+          image: product.image,
+          source: 'api', // Mark items as coming from the API
         }));
-        setItems(products);
+        setApiItems(products);
         setFilteredItems(products);
       });
+
+    // Fetch items from Firebase
+    const fetchFirebaseItems = async () => {
+      const querySnapshot = await getDocs(collection(db, "inventory"));
+      const firebaseProducts = [];
+      querySnapshot.forEach((doc) => {
+        firebaseProducts.push({ id: doc.id, ...doc.data(), source: 'firebase' });
+      });
+      setFirebaseItems(firebaseProducts);
+    };
+
+    fetchFirebaseItems();
   }, []);
+
+  useEffect(() => {
+    // Combine items from API and Firebase
+    const combinedItems = [...apiItems, ...firebaseItems];
+    setFilteredItems(combinedItems);
+
+    // Set categories from the combined data
+    const categories = [...new Set(combinedItems.map(item => item.category))];
+    setCategories(['All', ...categories]);
+  }, [apiItems, firebaseItems]);
 
   useEffect(() => {
     if (searchQuery) {
       setFilteredItems(
-        items.filter((item) =>
+        apiItems.concat(firebaseItems).filter((item) =>
           item.name.toLowerCase().includes(searchQuery.toLowerCase())
         )
       );
     } else {
-      setFilteredItems(items);
+      setFilteredItems(apiItems.concat(firebaseItems));
     }
-  }, [searchQuery, items]);
+  }, [searchQuery, apiItems, firebaseItems]);
 
   const handleAddToCheckout = (item) => {
     const existingItem = checkoutItems.find((i) => i.id === item.id);
@@ -70,6 +91,30 @@ const Dashboard = () => {
     }
   };
 
+  const handleCharge = async () => {
+    // Update inventory quantities in Firebase for items from Firebase
+    for (let item of checkoutItems) {
+      if (item.source === 'firebase') {
+        const itemRef = doc(db, "inventory", item.id);
+        await updateDoc(itemRef, {
+          quantity: item.quantity - item.quantity,
+        });
+      }
+    }
+
+    // Record the sale in Firebase
+    const saleData = {
+      items: checkoutItems,
+      totalAmount: total,
+      timestamp: new Date(),
+    };
+    await addDoc(collection(db, "sales"), saleData);
+
+    // Clear the checkout items after successful sale
+    setCheckoutItems([]);
+    setIsCheckoutVisible(false);
+  };
+
   const total = checkoutItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -77,7 +122,6 @@ const Dashboard = () => {
 
   return (
     <div className="flex h-screen">
-  
       <div className={`flex-1 p-4 ${isCheckoutVisible ? 'w-2/3' : 'w-full'}`}>
         <Heading text="Item menu" />
         <SearchInput onSearch={setSearchQuery} />
@@ -88,9 +132,9 @@ const Dashboard = () => {
               name={category}
               onClick={() =>
                 category === 'All'
-                  ? setFilteredItems(items)
+                  ? setFilteredItems(apiItems.concat(firebaseItems))
                   : setFilteredItems(
-                      items.filter((item) => item.category === category)
+                      apiItems.concat(firebaseItems).filter((item) => item.category === category)
                     )
               }
               className="p-4 border border-gray-300 rounded-lg text-center w-full"
@@ -120,7 +164,10 @@ const Dashboard = () => {
               <div>Total:</div>
               <div>${total.toFixed(2)}</div>
             </div>
-            <button className="mt-4 bg-green-500 text-white py-2 px-4 rounded">
+            <button
+              className="mt-4 bg-green-500 text-white py-2 px-4 rounded"
+              onClick={handleCharge}
+            >
               Charge ${total.toFixed(2)}
             </button>
           </div>
