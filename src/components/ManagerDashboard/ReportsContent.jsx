@@ -74,15 +74,15 @@ const ReportsContent = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="p-4 bg-blue-400 rounded">
           <h4 className="text-lg font-bold">Total Reports</h4>
-          <p className="text-2xl">{reportData.length}</p>
+          <p className="text-md">{reportData.length}</p>
         </div>
         <div className="p-4 bg-purple-200 rounded">
           <h4 className="text-lg font-bold">Latest Report</h4>
-          <p className="text-2xl">{reportData[0].title}</p>
+          <p className="text-md">{reportData[0].title}</p>
         </div>
         <div className="p-4 bg-yellow-200 rounded">
           <h4 className="text-lg font-bold">Report Date</h4>
-          <p className="text-2xl">{reportData[0].date}</p>
+          <p className="text-md">{reportData[0].date}</p>
         </div>
       </div>
       <h3 className="text-xl font-bold my-4">Report List</h3>

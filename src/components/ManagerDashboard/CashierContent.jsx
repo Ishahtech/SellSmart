@@ -14,7 +14,7 @@ const CashierContent = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="p-4 bg-blue-800 text-white rounded">
           <h4 className="text-lg font-bold">Total Cashiers</h4>
-          <p className="text-2xl">{cashierData.length}</p>
+          <p className="text-md">{cashierData.length}</p>
         </div>
       </div>
       <h3 className="text-xl font-bold my-4">Cashier List</h3>
