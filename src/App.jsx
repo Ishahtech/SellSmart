@@ -10,6 +10,7 @@ import Admin from "./components/AdminDashboard/Admin.jsx";
 import Layout from "./components/Layout.jsx";
 import InventoryContent from "./components/ManagerDashboard/InventoryContent.jsx";
 import Dashboard from "./components/CashierDashboard/Dashboard.jsx";
+import Inventory from "./components/AdminDashboard/Inventory.jsx";
 
 const App = () => {
   return (
