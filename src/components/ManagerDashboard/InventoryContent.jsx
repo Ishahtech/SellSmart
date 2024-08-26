@@ -84,16 +84,20 @@ const InventoryContent = () => {
 
   useEffect(() => {
     const fetchInventory = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "inventory"));
-        const items = [];
-        querySnapshot.forEach((doc) => {
-          items.push({ id: doc.id, ...doc.data() });
-        });
-        setInventoryData(items);
-      } catch (error) {
-        console.error("Error fetching inventory data: ", error);
-      }
+      // Use onSnapshot for real-time updates
+      const unsubscribe = onSnapshot(
+        collection(db, "inventory"),
+        (snapshot) => {
+          const items = [];
+          snapshot.forEach((doc) => {
+            items.push({ id: doc.id, ...doc.data() });
+          });
+          setInventoryData(items);
+        }
+      );
+
+      // Cleanup the listener on component unmount
+      return () => unsubscribe();
     };
 
     fetchInventory();
@@ -105,17 +109,17 @@ const InventoryContent = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="p-4 bg-blue-400 rounded">
           <h4 className="text-lg font-bold">Total Products</h4>
-          <p className="text-2xl">{inventoryData.length}</p>
+          <p className="text-md">{inventoryData.length}</p>
         </div>
         <div className="p-4 bg-yellow-200 rounded">
           <h4 className="text-lg font-bold">Low Stock</h4>
-          <p className="text-2xl">
+          <p className="text-md">
             {inventoryData.filter((item) => item.quantity < 10).length}
           </p>
         </div>
         <div className="p-4 bg-red-500 rounded">
           <h4 className="text-lg font-bold">Out of Stock</h4>
-          <p className="text-2xl">
+          <p className="text-md">
             {inventoryData.filter((item) => item.quantity === 0).length}
           </p>
         </div>
