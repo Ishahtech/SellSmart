@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase-config"; // Adjust the path based on your file structure
 
-
-  
-
-
 const InventoryContent = () => {
-  const [inventoryData setInventoryData] = useState([])
+  const [inventoryData, setInventoryData] = useState([]);
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -80,7 +76,5 @@ const InventoryContent = () => {
     </div>
   );
 };
-
-
 
 export default InventoryContent;
