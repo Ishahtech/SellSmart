@@ -11,15 +11,13 @@ import Layout from "./components/Layout.jsx";
 import InventoryContent from "./components/ManagerDashboard/InventoryContent.jsx";
 import Dashboard from "./components/CashierDashboard/Dashboard.jsx";
 
-
-
 const App = () => {
   return (
     <>
       <Router>
         <Routes>
-         {/* Routes without the Sidebar */}
-         <Route path="/" element={<Wholelanding />} />
+          {/* Routes without the Sidebar */}
+          <Route path="/" element={<Wholelanding />} />
           <Route path="/welcome" element={<WelcomeScreen />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/signup" element={<Signup />} />
@@ -42,7 +40,6 @@ const App = () => {
           <Route path="/cashier" element={<Layout />}>
             <Route index element={<Dashboard />} />
           </Route>
-
         </Routes>
       </Router>
     </>
@@ -50,4 +47,3 @@ const App = () => {
 };
 
 export default App;
-
