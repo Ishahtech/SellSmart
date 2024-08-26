@@ -1,36 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase-config"; // Adjust the path based on your file structure
-
-
-  
-
+import { collection, getDocs, onSnapshot } from "firebase/firestore";
+import { db } from "../../firebase-config"; // Ensure this path is correct
 
 const InventoryContent = () => {
-  const [inventoryData setInventoryData] = useState([])
+  const [inventoryData, setInventoryData] = useState([]);
 
   useEffect(() => {
     const fetchInventory = async () => {
-      const querySnapshot = await getDocs(collection(db, "inventory"));
-      const items = [];
-      querySnapshot.forEach((doc) => {
-        items.push({ id: doc.id, ...doc.data() });
+      // Use onSnapshot for real-time updates
+      const unsubscribe = onSnapshot(collection(db, "inventory"), (snapshot) => {
+        const items = [];
+        snapshot.forEach((doc) => {
+          items.push({ id: doc.id, ...doc.data() });
+        });
+        setInventoryData(items);
       });
-      setInventoryData(items);
+
+      // Cleanup the listener on component unmount
+      return () => unsubscribe();
     };
 
     fetchInventory();
   }, []);
-  // const inventoryData = [
-  //   { id: 1, name: "Coffee Beans", quantity: 50, category: "Beverages" },
-  //   { id: 2, name: "Milk", quantity: 30, category: "Dairy" },
-  //   { id: 3, name: "Sugar", quantity: 20, category: "Condiments" },
-  //   { id: 4, name: "Tissue paper", quantity: 6, category: "Toiletries" },
-  //   { id: 5, name: "Corn flakes", quantity: 60, category: "Cereals" },
-  //   { id: 6, name: "Salt", quantity: 10, category: "Condiments" },
-  //   { id: 7, name: "French cookies", quantity: 0, category: "Snacks" },
-  //   // Add more inventory data as needed
-  // ];
 
   return (
     <div className="p-4 bg-white shadow-md rounded mt-4">
@@ -80,7 +71,5 @@ const InventoryContent = () => {
     </div>
   );
 };
-
-
 
 export default InventoryContent;
