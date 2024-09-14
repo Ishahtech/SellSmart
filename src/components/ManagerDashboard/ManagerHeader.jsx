@@ -1,9 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const ManagerHeader = ({ toggleSidebar }) => {
-
   const navigate = useNavigate();
   return (
     <>
@@ -28,7 +26,10 @@ const ManagerHeader = ({ toggleSidebar }) => {
           Manager's Dashboard
         </h1>
         <div>
-          <button onClick={() => navigate('/login')} className="px-4 py-2 border-2 border-blue-800  text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white">
+          <button
+            onClick={() => navigate("/login")}
+            className="px-4 py-2 border-2 border-blue-800  text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white"
+          >
             Log Out
           </button>
         </div>
