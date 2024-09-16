@@ -1,19 +1,30 @@
-
-
-
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    width: 100%;
-  }
-  
-  .Landing {
-    text-align: center;
-    background-size: cover;
-    width: 100vw;
-  }
-  
-  /* .header {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.Landing {
+  text-align: center;
+  background-size: cover;
+  width: 100vw;
+}
+
+.overlay {
+  z-index: 1; /* Ensures overlay is behind the text/buttons */
+  opacity: 0.7;
+}
+
+.hero-text,
+.cta-buttons {
+  z-index: 2; /* Ensures text/buttons are above the overlay */
+}
+
+.cta-buttons {
+  z-index: 3; /* Ensures buttons are clickable and above the overlay */
+}
+
+/* .header {
     display: flex;
     justify-content: space-between;
     align-items: center;

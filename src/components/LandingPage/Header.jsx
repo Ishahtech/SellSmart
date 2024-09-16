@@ -1,5 +1,13 @@
+import "../LandingPage.css";
 import posImage from "../../images/posImage.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faListAlt } from "@fortawesome/free-solid-svg-icons";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -112,19 +120,39 @@ const Header = () => {
           </svg>
         </button>
         <nav className="flex flex-col p-8 space-y-6">
-          <a href="#home" className="text-black font-medium text-lg">
+          <a
+            href="#home"
+            className="flex items-center text-black font-medium text-lg"
+          >
+            <FontAwesomeIcon icon={faHome} className="mr-2" />
             Home
           </a>
-          <a href="#features" className="text-black font-medium text-lg">
+          <a
+            href="#features"
+            className="flex items-center text-black font-medium text-lg"
+          >
+            <FontAwesomeIcon icon={faListAlt} className="mr-2" />
             Features
           </a>
-          <a href="#about" className="text-black font-medium text-lg">
+          <a
+            href="#about"
+            className="flex items-center text-black font-medium text-lg"
+          >
+            <FontAwesomeIcon icon={faInfoCircle} className="mr-2" />
             About us
           </a>
-          <a href="#help" className="text-black font-medium text-lg">
+          <a
+            href="#help"
+            className="flex items-center text-black font-medium text-lg"
+          >
+            <FontAwesomeIcon icon={faQuestionCircle} className="mr-2" />
             Help
           </a>
-          <a href="#contact" className="text-black font-medium text-lg">
+          <a
+            href="#contact"
+            className="flex items-center text-black font-medium text-lg"
+          >
+            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
             Contact
           </a>
           <a
@@ -132,8 +160,9 @@ const Header = () => {
               navigate("/admin");
               toggleSidebar(); // Close the sidebar after clicking
             }}
-            className="text-black font-medium text-lg cursor-pointer"
+            className="flex items-center text-black font-medium text-lg cursor-pointer"
           >
+            <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
             Login
           </a>
           <a
@@ -141,8 +170,9 @@ const Header = () => {
               navigate("/Signup");
               toggleSidebar(); // Close the sidebar after clicking
             }}
-            className="text-black font-medium text-lg cursor-pointer"
+            className="flex items-center text-black font-medium text-lg cursor-pointer"
           >
+            <FontAwesomeIcon icon={faUserPlus} className="mr-2" />
             Signup
           </a>
         </nav>
@@ -162,28 +192,31 @@ const Header = () => {
       >
         <div className="overlay absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
         <div
-          className="hero-text max-w-none px-4 sm:px-6 md:px-0"
+          className="hero-text max-w-none px-4 sm:px-6 md:px-0 text-center"
           style={{ top: "3rem" }}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5 md:w-[600px] leading-tight">
-            Effortlessly streamline and{" "}
-            <span className="block sm:inline">enhance your sales and</span>{" "}
-            <span className="block mt-2 sm:mt-0 md:inline">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl mb-5 md:w-[600px] leading-tight mx-auto">
+            Effortlessly streamline and enhance your{" "}
+            <span className="block sm:inline text-blue-800">sales</span> and
+            <span className="block mt-2 sm:mt-0 md:inline text-blue-800">
               product management.
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-lg mb-10 w-[90%] md:w-[400px] leading-tight">
-            Monitor your goods and sales with our intuitive{" "}
-            <span className="block mt-2">inventory manager.</span>
+          <p className="text-base sm:text-lg md:text-lg mb-10 w-full md:w-auto mx-auto">
+            Monitor your goods and sales with our intuitive inventory manager.
           </p>
-          <div className="cta-buttons flex flex-col sm:flex-row md:flex-row justify-center">
+          <div className="cta-buttons flex flex-col sm:flex-row md:flex-row justify-center items-center gap-3">
             <button
-              onClick={() => navigate("/Signup")}
-              className="get-started px-6 sm:px-8 md:px-8 py-3 border-2 border-white text-white font-medium rounded-md bg-transparent  hover:bg-blue-800 mb-4 sm:mb-0 md:mb-0 md:mr-4"
+              onClick={() => navigate("./welcome")}
+              className="get-started px-6 sm:px-8 md:px-8 py-3 border-2 border-white text-white font-medium rounded-md bg-transparent hover:bg-blue-800 mb-4 sm:mb-0 md:mb-0 sm:w-auto"
+              style={{ minWidth: "200px" }}
             >
               Get Started
             </button>
-            <button className="watch-demo px-6 py-3 border-2 border-white text-white font-medium rounded-md flex justify-center items-center bg-transparent hover:bg-blue-800">
+            <button
+              className="watch-demo px-6 py-3 border-2 border-white text-white font-medium rounded-md flex justify-center items-center bg-transparent hover:bg-blue-800 sm:w-auto"
+              style={{ minWidth: "200px" }}
+            >
               <FontAwesomeIcon icon={faPlay} className="video mr-2" />
               Watch Demo
             </button>
