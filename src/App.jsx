@@ -10,7 +10,7 @@ import Admin from "./components/AdminDashboard/Admin.jsx";
 import Layout from "./components/Layout.jsx";
 import InventoryContent from "./components/ManagerDashboard/InventoryContent.jsx";
 import Dashboard from "./components/CashierDashboard/Dashboard.jsx";
-import Inventory from "./components/AdminDashboard/Inventory.jsx";
+import Inventory from "./components/Inventory/Inventory.jsx";
 
 const App = () => {
   return (
@@ -28,6 +28,7 @@ const App = () => {
           {/* Routes with the Sidebar */}
           <Route path="/manager" element={<Layout />}>
             <Route index element={<Manager />} />
+            <Route path="inventory/*" element={<Inventory />} />
           </Route>
 
           <Route path="/admin" element={<Layout />}>
