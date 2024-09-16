@@ -22,23 +22,38 @@ const Header = () => {
           SellSmart
         </div>
         <nav className="nav hidden md:flex">
-          <a href="#home" className="mx-2 md:mx-4 text-black font-medium">
+          <a
+            href="#home"
+            className="mx-2 md:mx-4 text-black  hover:text-blue-800 font-medium"
+          >
             Home
           </a>
-          <a href="#features" className="mx-2 md:mx-4 text-black font-medium">
+          <a
+            href="#features"
+            className="mx-2 md:mx-4 text-black  hover:text-blue-800 font-medium"
+          >
             Features
           </a>
-          <a href="#about" className="mx-2 md:mx-4 text-black font-medium">
+          <a
+            href="#about"
+            className="mx-2 md:mx-4 text-black  hover:text-blue-800 font-medium"
+          >
             About us
           </a>
-          <a href="#help" className="mx-2 md:mx-4 text-black font-medium">
+          <a
+            href="#help"
+            className="mx-2 md:mx-4 text-black  hover:text-blue-800 font-medium"
+          >
             Help
           </a>
-          <a href="#contact" className="mx-2 md:mx-4 text-black font-medium">
+          <a
+            href="#contact"
+            className="mx-2 md:mx-4 text-black  hover:text-blue-800 font-medium"
+          >
             Contact
           </a>
         </nav>
-        <div className="auth-buttons hidden md:flex">
+        <div className="auth-buttons hidden md:flex gap-2">
           <button
             onClick={() => navigate("/admin")}
             className="login px-4 sm:px-6 md:px-10 py-2 border-2 border-blue-800 text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white"
@@ -164,11 +179,11 @@ const Header = () => {
           <div className="cta-buttons flex flex-col sm:flex-row md:flex-row justify-center">
             <button
               onClick={() => navigate("/Signup")}
-              className="get-started px-6 sm:px-8 md:px-8 py-3 border-2 border-white text-white font-medium rounded-md bg-transparent hover:bg-blue-800 hover:border-blue-800 hover:text-white mb-4 sm:mb-0 md:mb-0 md:mr-4"
+              className="get-started px-6 sm:px-8 md:px-8 py-3 border-2 border-white text-white font-medium rounded-md bg-transparent  hover:bg-blue-800 mb-4 sm:mb-0 md:mb-0 md:mr-4"
             >
               Get Started
             </button>
-            <button className="watch-demo px-6 py-3 border-2 border-white text-white font-medium rounded-md flex justify-center items-center bg-transparent hover:bg-blue-800 hover:border-blue-800 hover:text-white">
+            <button className="watch-demo px-6 py-3 border-2 border-white text-white font-medium rounded-md flex justify-center items-center bg-transparent hover:bg-blue-800">
               <FontAwesomeIcon icon={faPlay} className="video mr-2" />
               Watch Demo
             </button>
