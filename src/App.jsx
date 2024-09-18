@@ -31,6 +31,9 @@ const App = () => {
             <Route path="inventory/*" element={<Inventory />} />
           </Route>
 
+          <Route path="/login-owner" element={<LoginOwner />} />
+          <Route path="/admin" element={<Admin />} />
+
           <Route path="/admin" element={<Layout />}>
             <Route index element={<Admin />} />
           </Route>

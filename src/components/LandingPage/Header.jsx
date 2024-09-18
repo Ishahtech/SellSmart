@@ -63,7 +63,7 @@ const Header = () => {
         </nav>
         <div className="auth-buttons hidden md:flex gap-2">
           <button
-            onClick={() => navigate("/admin")}
+            onClick={() => navigate("/login")}
             className="login px-4 sm:px-6 md:px-10 py-2 border-2 border-blue-800 text-blue-800 font-medium rounded-lg hover:bg-blue-800 hover:text-white"
           >
             Login
