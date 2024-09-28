@@ -107,9 +107,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     <>
       {/* Sidebar */}
       <aside
+        // className={`fixed top-0 left-0 h-screen bg-gray-800 text-white w-64 space-y-6 py-7 px-2 transform ${
+        //   isOpen ? "translate-x-0" : "-translate-x-64"
+        // } transition-transform lg:static lg:translate-x-0`}
         className={`fixed top-0 left-0 h-screen bg-gray-800 text-white w-64 space-y-6 py-7 px-2 transform ${
-          isOpen ? "translate-x-0" : "-translate-x-64"
-        } transition-transform lg:static lg:translate-x-0`}
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out lg:static lg:translate-x-0`}
       >
         <div className="text-white flex items-center space-x-2 px-4">
           <span className="text-2xl font-extrabold">SellSmart</span>
@@ -193,3 +196,57 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 };
 
 export default Sidebar;
+
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { CgMenuRound } from "react-icons/cg";
+// import { FaUsers, FaSitemap } from "react-icons/fa";
+// import {
+//   BsCart3,
+//   BsListCheck,
+//   BsMenuButtonWideFill,
+//   BsFillGearFill,
+//   BsPeopleFill,
+// } from "react-icons/bs";
+
+// const Sidebar = ({ isOpen, toggleSidebar }) => {
+//   return (
+//     <>
+//       {/* Sidebar */}
+//       <aside
+//         className={`fixed top-0 left-0 h-screen bg-gray-800 text-white w-64 space-y-6 py-7 px-2 transform ${
+//           isOpen ? "translate-x-0" : "-translate-x-full"
+//         } transition-transform duration-300 ease-in-out lg:static lg:translate-x-0`}
+//       >
+//         <div className="text-white flex items-center space-x-2 px-4">
+//           <span className="text-2xl font-extrabold">SellSmart</span>
+//         </div>
+//         <nav>
+//           <ul className="space-y-2">
+//             {/* Navigation Items */}
+//             <li className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md">
+//               <CgMenuRound />
+//               <Link to="/admin" className="ml-2" onClick={toggleSidebar}>
+//                 Dashboard
+//               </Link>
+//             </li>
+//             {/* Other nav items */}
+//           </ul>
+//         </nav>
+//       </aside>
+
+//       {/* Hamburger Menu Button */}
+//       {/* <button
+//         className="fixed top-4 left-4 z-50 lg:hidden"
+//         onClick={toggleSidebar}
+//       >
+//         <CgMenuRound className="w-8 h-8 text-white" />
+//       </button> */}
+//     </>
+//   );
+// };
+
+// export default Sidebar;
+
+// original without changes
