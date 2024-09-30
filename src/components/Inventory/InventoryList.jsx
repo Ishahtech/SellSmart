@@ -1,31 +1,64 @@
-// For displaying all inventory items
-import { useState, useEffect } from "react";
-import { db } from "../../firebase-config";
-import { collection, getDocs } from "firebase/firestore";
+// // For displaying all inventory items
+// import { useState, useEffect } from "react";
+// import { db } from "../../firebase-config";
+// import { collection, getDocs } from "firebase/firestore";
+
+// const InventoryList = () => {
+//   const [items, setItems] = useState([]);
+
+//   useEffect(() => {
+//     const fetchItems = async () => {
+//       const querySnapshot = await getDocs(collection(db, "inventory"));
+//       const itemList = querySnapshot.docs.map((doc) => ({
+//         ...doc.data(),
+//         id: doc.id,
+//       }));
+//       setItems(itemList);
+//     };
+
+//     fetchItems();
+//   }, []);
+
+//   return (
+//     <div>
+//       <h1>Inventory List</h1>
+//       <ul>
+//         {items.map((item) => (
+//           <li key={item.id}>
+//             {item.name} - {item.quantity}
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default InventoryList;
+
+// src/components/InventoryList.jsx
+import React, { useEffect, useState } from "react";
+import { getInventoryItemsRealtime } from "../../firebaseFunction";
 
 const InventoryList = () => {
-  const [items, setItems] = useState([]);
+  const [inventory, setInventory] = useState([]);
 
   useEffect(() => {
-    const fetchItems = async () => {
-      const querySnapshot = await getDocs(collection(db, "inventory"));
-      const itemList = querySnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setItems(itemList);
-    };
+    // Subscribe to real-time updates
+    const unsubscribe = getInventoryItemsRealtime((items) => {
+      setInventory(items);
+    });
 
-    fetchItems();
+    // Cleanup listener when component unmounts
+    return () => unsubscribe();
   }, []);
 
   return (
     <div>
-      <h1>Inventory List</h1>
+      <h2>Inventory List</h2>
       <ul>
-        {items.map((item) => (
+        {inventory.map((item) => (
           <li key={item.id}>
-            {item.name} - {item.quantity}
+            {item.name} - ${item.price} (Stock: {item.stock})
           </li>
         ))}
       </ul>
