@@ -11,6 +11,7 @@ import Layout from "./components/Layout.jsx";
 import InventoryContent from "./components/ManagerDashboard/InventoryContent.jsx";
 import Dashboard from "./components/CashierDashboard/Dashboard.jsx";
 import Inventory from "./components/Inventory/Inventory.jsx";
+import InventoryList from "./components/Inventory/InventoryList.jsx";
 
 const App = () => {
   return (
